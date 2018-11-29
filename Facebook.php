@@ -28,7 +28,7 @@ $s = curl($url);
 //echo $s;
 $vurl = preg_match('/<a href=\"\/video_redirect\/\?src\=(.*?)\"/ims', $s, $matches) ? $matches[1] : null;
 $vu = urldecode($vurl);
-echo "\n\n\033[1;36m[Gray] \033[1;33mDescargando... \n\n\n";
+echo "\n\n[Gray] \033[1;33mDescargando... \n\n\n";
 $d = 'wget -O "' . $name . '.mp4" --user-agent="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.6 (KHTML, like Gecko) Chrome/20.0.1092.0 Safari/536.6" "' . $vu . '" -q --show-progress';
 system($d);
 echo "\n\n[+] Done.. Saved As : " . $name . ".mp4\n\n";
